@@ -43,3 +43,15 @@ Training Speed: Whole tokens mean fewer steps for the model to process a sentenc
 Final Quality Check
 A "perfect" tokenizer for your organization should show ✅ WHOLE for at least 90% of your primary technical terms.
 """
+#python
+# In main_trainer.py
+"""
+tokenizer = Tokenizer.from_file("org_tokenizer_final.json")
+actual_vocab_size = tokenizer.get_vocab_size()
+
+# Ensure the embedding layer matches exactly
+model.embedding = nn.Embedding(actual_vocab_size, embedding_dim)
+Use code with caution.
+4. Verification
+Run your check_fragmentation.py again. Those words should now all show ✅ WHOLE.
+"""
