@@ -41,3 +41,9 @@ Use code with caution.
 Security: Never share your YOUR_SECRET_KEY used in the encryption script.
 Hardware: If the phone overheats, reduce batch_size in main_trainer.py.
 Medical/Engineering: Always verify model outputs against physical labels and official guidelines.
+
+
+1. Create the File
+Run this command in Termux to generate the file:
+
+nano README.md
