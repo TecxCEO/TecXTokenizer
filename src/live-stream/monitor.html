@@ -1,0 +1,19 @@
+<!-- monitor.html -->
+<html>
+  <head>
+    <meta http-equiv="refresh" content="30"> <!-- Refreshes every 30 seconds -->
+    <title>AI Training Stream</title>
+  </head>
+  <body style="background:#000; color:#0f0; font-family:monospace;">
+    <pre id="logs"></pre>
+    <script>
+      fetch('production_training.log')
+        .then(response => response.text())
+        .then(data => {
+          const lines = data.split('\n');
+          document.getElementById('logs').innerText = lines.slice(-50).join('\n'); // Show last 50 lines
+        });
+    </script>
+  </body>
+</html>
+
