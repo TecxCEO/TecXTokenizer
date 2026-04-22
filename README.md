@@ -12,16 +12,19 @@ Architecture: BPE Tokenizer + PyTorch LSTM/Transformer + Safety Guardrails
 Phase 1: Data Preparation
 jsonl_to_txt.py: Extracts raw text from your JSONL datasets to create a training corpus.
 train_tokenizer.py: Trains a modern Byte-Pair Encoding (BPE) tokenizer on your specific domain vocabulary (Saved as org_tokenizer.json).
+
 Phase 2: Data Augmentation (Expert Knowledge Growth)
 augment_data.py: Uses synonym substitution to double your dataset.
 back_translate_aug.py: Uses English ↔ Hindi translation to create natural sentence variations.
 shuffle_dataset.py: Randomizes the order of samples to prevent model bias.
+
 Phase 3: Training & Safety
 bulk_encode.py: Converts the final text dataset into numeric IDs (Tokens) for fast processing.
 main_trainer.py: The core training script. It features:
 Streaming Loading: Low RAM usage for mobile.
 Safety Monitor: Uses forbidden_rules.json to penalize dangerous or illegal actions.
 Checkpointing: Saves best_model.pth automatically.
+
 Phase 4: Deployment & Audit
 test_safety.py: Verifies that the Guardrails block forbidden actions.
 secure_sync.py: Encrypts logs (AES-256) and pushes them to GitHub.
