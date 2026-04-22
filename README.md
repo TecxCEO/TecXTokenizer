@@ -8,6 +8,7 @@ Project: Puzzle Solving AI
 Environment: Android (Termux / Pydroid 3)
 Architecture: BPE Tokenizer + PyTorch LSTM/Transformer + Safety Guardrails
 📂 Pipeline Overview
+```
 Phase 1: Data Preparation
 jsonl_to_txt.py: Extracts raw text from your JSONL datasets to create a training corpus.
 train_tokenizer.py: Trains a modern Byte-Pair Encoding (BPE) tokenizer on your specific domain vocabulary (Saved as org_tokenizer.json).
@@ -25,8 +26,10 @@ Phase 4: Deployment & Audit
 test_safety.py: Verifies that the Guardrails block forbidden actions.
 secure_sync.py: Encrypts logs (AES-256) and pushes them to GitHub.
 dashboard.py: Run on PC to analyze the Safety Success Rate and performance trends.
+```
 🚀 Quick Start
 bash
+```
 # 1. Prepare Data
 python jsonl_to_txt.py && python train_tokenizer.py
 
@@ -36,7 +39,9 @@ python augment_data.py && python bulk_encode.py
 # 3. Train with Wakelock
 termux-wake-lock
 python main_trainer.py
+```
 Use code with caution.
+
 ⚠️ Important Notes
 Security: Never share your YOUR_SECRET_KEY used in the encryption script.
 Hardware: If the phone overheats, reduce batch_size in main_trainer.py.
