@@ -1,4 +1,4 @@
-# TecXTokenizer
+# TecX Tokenizer
 TecX Tokenizer
 
 Expert Knowledge-Based System (v1.0)
